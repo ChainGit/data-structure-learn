@@ -36,7 +36,7 @@ public class QueueTest {
 		// 添加元素和队列扩容测试
 		for (int i = 100; i < 140; i++) {
 			if (i == 120)
-				// null值测试
+				// null值测试，不建议在队列中添加null值，以免使用remove方法时出现错误判断
 				queue.add(null);
 			else
 				queue.add(i);
@@ -81,11 +81,13 @@ public class QueueTest {
 
 		System.out.println();
 
-		// 公共集合类测试
+		// remove(obj)测试
 		System.out.println(queue.remove(queue.peek()));
 
 		System.out.println(queue);
 		System.out.println("size：" + queue.size());
+
+		System.out.println();
 
 		// 队列是否包含元素测试
 		System.out.println(queue.contains(87));
