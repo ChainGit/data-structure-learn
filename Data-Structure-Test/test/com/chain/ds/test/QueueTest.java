@@ -84,6 +84,9 @@ public class QueueTest {
 		// 公共集合类测试
 		System.out.println(queue.remove(queue.peek()));
 
+		System.out.println(queue);
+		System.out.println("size：" + queue.size());
+
 		// 队列是否包含元素测试
 		System.out.println(queue.contains(87));
 
