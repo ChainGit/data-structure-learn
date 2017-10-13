@@ -3,6 +3,8 @@ package com.chain.ds;
 /**
  * 集合类公共接口
  * 
+ * 所有集合类的根接口
+ * 
  * @author Chain
  *
  */

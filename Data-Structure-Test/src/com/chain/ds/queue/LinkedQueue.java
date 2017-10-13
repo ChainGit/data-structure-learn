@@ -14,7 +14,7 @@ import com.chain.ds.Iterator;
  */
 public class LinkedQueue<E> extends AbstractQueue<E> {
 
-	// 首节点不存储元素
+	// 为了操作方便，单端队列的首节点不存储元素
 	private QueueNode headNode;
 
 	private int count;
@@ -217,6 +217,7 @@ public class LinkedQueue<E> extends AbstractQueue<E> {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
+			result = prime * result + getOuterType().hashCode();
 			result = prime * result + ((value == null) ? 0 : value.hashCode());
 			return result;
 		}
@@ -231,6 +232,8 @@ public class LinkedQueue<E> extends AbstractQueue<E> {
 			if (getClass() != obj.getClass())
 				return false;
 			QueueNode other = (QueueNode) obj;
+			if (!getOuterType().equals(other.getOuterType()))
+				return false;
 			if (value == null) {
 				if (other.value != null)
 					return false;
@@ -242,6 +245,11 @@ public class LinkedQueue<E> extends AbstractQueue<E> {
 		@Override
 		public String toString() {
 			return value.toString();
+		}
+
+		@SuppressWarnings("rawtypes")
+		private LinkedQueue getOuterType() {
+			return LinkedQueue.this;
 		}
 
 	}

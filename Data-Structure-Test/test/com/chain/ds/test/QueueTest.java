@@ -8,7 +8,7 @@ import com.chain.ds.queue.LinkedQueue;
 import com.chain.ds.queue.Queue;
 
 /**
- * 队列测试
+ * 单端队列测试
  * 
  * @author Chain
  *
@@ -18,19 +18,21 @@ public class QueueTest {
 	// 测试单端数组对列
 	@Test
 	public void test1() {
+		System.out.println("ArrayQueue：");
 		Queue<Integer> queue = new ArrayQueue<>();
-		test0(queue);
+		testQueue(queue);
 	}
 
 	// 测试单端链表对列
 	@Test
 	public void test2() {
+		System.out.println("LinkedQueue：");
 		Queue<Integer> queue = new LinkedQueue<>();
-		test0(queue);
+		testQueue(queue);
 	}
 
 	// 测试的时候要循环往返的 从空 到 插入 到 随机插入和删除 再回到 空
-	public void test0(Queue<Integer> queue) {
+	public void testQueue(Queue<Integer> queue) {
 		// 空队列测试
 		System.out.println(queue);
 		System.out.println("size：" + queue.size());

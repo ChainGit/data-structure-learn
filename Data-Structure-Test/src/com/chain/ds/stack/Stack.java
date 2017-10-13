@@ -1,5 +1,7 @@
 package com.chain.ds.stack;
 
+import com.chain.ds.Collection;
+
 /**
  * 栈的公共接口
  * 
@@ -10,7 +12,7 @@ package com.chain.ds.stack;
  * @author Chain
  *
  */
-public interface Stack<E> {
+public interface Stack<E> extends Collection<E> {
 
 	/**
 	 * 查看栈顶元素
@@ -31,6 +33,6 @@ public interface Stack<E> {
 	 * 
 	 * @return
 	 */
-	boolean push();
+	boolean push(E e);
 
 }

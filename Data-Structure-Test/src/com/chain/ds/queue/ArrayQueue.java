@@ -4,6 +4,7 @@ import java.util.ConcurrentModificationException;
 import java.util.NoSuchElementException;
 
 import com.chain.ds.Iterator;
+import com.chain.ds.array.Array;
 
 /**
  * 数组实现单端队列
@@ -14,7 +15,7 @@ import com.chain.ds.Iterator;
  *
  * @param <E>
  */
-public class ArrayQueue<E> extends AbstractArrayQueue<E> {
+public class ArrayQueue<E> extends AbstractQueue<E> implements Array<E> {
 
 	private Object[] data;
 
@@ -23,10 +24,11 @@ public class ArrayQueue<E> extends AbstractArrayQueue<E> {
 
 	// 指向队列的头元素所在的位置的下标
 	private int head;
-	// 指向队列的尾元素所在的位置的后一个下标
+	// 指向队列的尾元素所在的位置的后一个下标，这样做会浪费一个数组位置
+	// 如果使用count来作为isEmpty，isFull，和size的判断的话无需指向后一个下标，可以直接指向所在位置的下标
 	private int tail;
 
-	private static int capacity = 10;
+	private static int capacity = 8;
 
 	public ArrayQueue() {
 		super();
@@ -98,8 +100,8 @@ public class ArrayQueue<E> extends AbstractArrayQueue<E> {
 		// return count;
 	}
 
-	@Override
-	protected boolean isFull() {
+	// 队列当前的容量是否已满，可用于容量扩展
+	private boolean isFull() {
 		// 假设head和tail是不重叠的，即tail和head之间空一格
 		if ((tail + 1) % capacity == head)
 			return true;
@@ -123,7 +125,7 @@ public class ArrayQueue<E> extends AbstractArrayQueue<E> {
 	@Override
 	public void clear() {
 		head = tail = count = 0;
-		capacity = 10;
+		capacity = 8;
 		data = new Object[capacity];
 	}
 

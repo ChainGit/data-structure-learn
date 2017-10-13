@@ -22,7 +22,7 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
 		if (offer(e))
 			return true;
 		else
-			throw new IllegalStateException("queue full");
+			throw new IllegalStateException("queue add fail");
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
 		if (x != null)
 			return x;
 		else
-			throw new NoSuchElementException("queue empty");
+			throw new NoSuchElementException("queue remove fail");
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
 		if (x != null)
 			return x;
 		else
-			throw new NoSuchElementException("queue empty");
+			throw new NoSuchElementException("queue element fail");
 	}
 
 	@Override
