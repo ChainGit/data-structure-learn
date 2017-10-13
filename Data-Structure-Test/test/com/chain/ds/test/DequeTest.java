@@ -15,6 +15,7 @@ import com.chain.ds.deque.LinkedDeque;
  */
 public class DequeTest {
 
+	// 测试双端数组队列
 	@Test
 	public void test1() {
 		System.out.println("ArrayDeque：");
@@ -22,6 +23,7 @@ public class DequeTest {
 		testDeque(deque);
 	}
 
+	// 测试双端链表队列
 	@Test
 	public void test2() {
 		System.out.println("LinkedDeque：");
@@ -29,6 +31,7 @@ public class DequeTest {
 		testDeque(deque);
 	}
 
+	// 测试的时候要循环往返的 从空 到 插入 到 随机插入和删除 再回到 空
 	public void testDeque(Deque<Integer> deque) {
 		// 空队列测试
 		System.out.println(deque);

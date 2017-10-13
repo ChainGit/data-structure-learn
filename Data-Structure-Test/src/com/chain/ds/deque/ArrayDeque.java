@@ -5,7 +5,6 @@ import java.util.NoSuchElementException;
 
 import com.chain.ds.Iterator;
 import com.chain.ds.array.Array;
-import com.chain.ds.queue.ArrayQueue;
 
 /**
  * 数组双端队列

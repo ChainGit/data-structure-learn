@@ -15,7 +15,7 @@ import com.chain.ds.queue.Queue;
  */
 public class QueueTest {
 
-	// 测试单端数组对列
+	// 测试单端数组队列
 	@Test
 	public void test1() {
 		System.out.println("ArrayQueue：");
@@ -23,7 +23,7 @@ public class QueueTest {
 		testQueue(queue);
 	}
 
-	// 测试单端链表对列
+	// 测试单端链表队列
 	@Test
 	public void test2() {
 		System.out.println("LinkedQueue：");
