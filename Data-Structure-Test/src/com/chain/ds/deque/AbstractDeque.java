@@ -11,6 +11,9 @@ import com.chain.ds.queue.AbstractQueue;
  */
 public abstract class AbstractDeque<E> extends AbstractQueue<E> implements Deque<E> {
 
+	protected AbstractDeque() {
+	}
+
 	/**
 	 * 弹出栈顶元素
 	 * 
